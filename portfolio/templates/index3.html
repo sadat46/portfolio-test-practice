@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Database Records Practice</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+<style>
+
+
+table {
+    border-collapse: collapse;
+}
+
+table, td, th {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+            
+tr:hover {background-color: #ddd;}
+
+th  {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+    }
+    h2 {
+    margin-right:800px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left:10px;
+    padding-right:7px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+    }
+    h3 {
+    margin-right:960px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left:10px;
+    padding-right:7px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+    }
+</style>
+</head>
+<body>
+    <h1 style="margin-left:120px; color:red;">Welcome to Datebase practice page-01. dt: 04 Feb 20</h1>
+    <div class="container">
+        <p>
+            <h2> Here is the first table</h2>
+        </p>
+        
+    </div>
+
+   
+    <div class="container">
+
+        {% if access_records %}
+        <table>
+            <thead>
+                <th>Ser No</th>
+                <th>Topic Name</th>
+                <th>Site Name</th>                
+                <th>Site URL</th>
+                <th>Received Date</th>
+                <th>Status</th>
+                
+                
+            </thead>
+            {% for ax in access_records %}
+            <tbody>
+                <tr>
+                    <td>{{ forloop.counter}}</td>
+                    <td>{{ ax.name.topic}}</td>
+                    <td>{{ ax.name}}</td>
+                    <td>{{ ax.name.url}}</td>
+                    <td>{{ ax.date}}</td>
+                    <td>{{ ax.name.item_status}}</td>
+                    
+                    
+                    <!-- to bring item from another
+                         model. ax.present model foreign key name. anothr
+                          model item name -->
+
+                    
+                    
+
+                </tr>
+            </tbody>
+            {% endfor %}
+            
+
+        </table>
+        {% endif %}
+    </div>
+</body>
+</html>
+{% endblock %}

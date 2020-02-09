@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Base Template Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    
+    <style>
+      
+        
+        li {
+            float: left;
+        }
+        
+        li a, .dropbtn {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+        li a:hover, .dropdown:hover .dropbtn {
+            background-color: red;
+        }
+        
+        li.dropdown {
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        
+        .dropdown-content a:hover {background-color: red;
+        color: white}
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        </style>
+</head>
+<body>
+    
+    "this page is from sub folder of main base dir
+    <header>
+            <div class="container">
+                <div id="branding">
+                    <h1><span class="highlight">Enjoy</span> Leatest Movie</h1>
+    
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="/home/">Home</a></li>
+                        <li><a href="/afshen/">afshen page</a></li>
+                        <li><a href="/webpage/">WEBPAGE</a></li>
+                        <li class="dropdown"><a href="#" class="dropbtn">Movie page</a>
+                            <div class="dropdown-content">
+                                <a href="/add_movie/">ADD MOVIE</a>
+                                <a href="/view_movie/">VIEW MOVIE</a>
+                        <li><a href="/admin">Admin Login</a></li>
+                    </ul>
+                </nav>
+    
+            </div>
+    </header>
+    {% block content %}
+    hi
+    {% endblock %}
+</body>
+</html>

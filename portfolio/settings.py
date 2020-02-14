@@ -5,8 +5,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # TEMPLATES_DIRS = os.path.join(BASE_DIR, "templates/sadat_templates")
 # TEMPLATES_DIR = os.path.join(BASE_DIR, "templates")
-STATIC_DIR = os.path.join(BASE_DIR, "static")
-MEDIA_DIR = os.path.join(BASE_DIR, "midea")
+# STATIC_DIR = os.path.join(BASE_DIR, "static")
+# MEDIA_DIR = os.path.join(BASE_DIR, "media")
 
 
 
@@ -139,12 +139,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [STATIC_DIR,]
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+STATICFILES_DIRS = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
 
-# MIDEA
-MEDIA_ROOT = MEDIA_DIR
+# MEDIA
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media_cdn")
 
 
 
